@@ -3,15 +3,22 @@ import React from "react";
 export default function User() {
 
     const [nameUser, setNameUser] = React.useState("catanacomics");
+    const [imgUser, setImgUser] = React.useState("./assets/img/catanacomics.svg")
 
     function pencilButton() {
         const newNameUser = prompt("Digite seu nome de usuário!");
         (newNameUser === "" || newNameUser === null) ? setNameUser(nameUser) : setNameUser(newNameUser);
     }
 
+    function changeProfileImg() {
+        const newProfileImg = prompt("Cole aqui o link da nova imagem de perfil");
+        (newProfileImg === "" || newProfileImg === null) ? setImgUser(imgUser) : setImgUser(newProfileImg);
+
+    }
+
     return (
         <div className="usuario">
-            <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
+            <img src={imgUser} alt="imagem de perfil" onClick={changeProfileImg}/>
             <div className="texto">
                 <span>
                     <strong>{nameUser}</strong>
