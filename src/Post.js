@@ -1,12 +1,36 @@
 
 export default function Post() {
+
+    const postPack = [
+        {
+            srcAvatarPost: "assets/img/meowed.svg", nameAlt: "meowed",
+            srcPost: "assets/img/gato-telefone.svg", altPost: "gato-telefone",
+            srcLike: "assets/img/respondeai.svg", altLike: "respondeai", numberLikes: 101.523
+        },
+
+        {
+            srcAvatarPost: "assets/img/barked.svg", nameAlt: "barked",
+            srcPost: "assets/img/dog.svg", altPost: "dog",
+            srcLike: "assets/img/adorable_animals.svg", altLike: "respondeai", numberLikes: 99.159
+        },
+
+        {
+            srcAvatarPost: "assets/img/9gag.svg", nameAlt: "9gag",
+            srcPost: "assets/img/paris.webp", altPost: "paris",
+            srcLike: "assets/img/chibirdart.svg", altLike: "Chibirdart", numberLikes: 80.800
+        }
+    ];
+
     return (
         <div className="posts">
+
+            {postPack.map(post => {
+                return (
                     <div className="post">
                         <div className="topo">
                             <div className="usuario">
-                                <img src="assets/img/meowed.svg" alt="meowed" />
-                                meowed
+                                <img src={post.srcAvatarPost} alt={post.nameAlt} />
+                                {post.nameAlt}
                             </div>
                             <div className="acoes">
                                 <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -14,7 +38,7 @@ export default function Post() {
                         </div>
 
                         <div className="conteudo">
-                            <img src="assets/img/gato-telefone.svg" alt="gato-telefone" />
+                            <img src={post.srcPost} alt={post.altPost} />
                         </div>
 
                         <div className="fundo">
@@ -30,49 +54,15 @@ export default function Post() {
                             </div>
 
                             <div className="curtidas">
-                                <img src="assets/img/respondeai.svg" alt="respondeai" />
+                                <img src={post.srcLike} alt={post.altLike} />
                                 <div className="texto">
-                                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                                    Curtido por <strong>{post.altLike}</strong> e <strong>outras {post.numberLikes.toFixed(3)} pessoas</strong>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div className="post">
-                        <div className="topo">
-                            <div className="usuario">
-                                <img src="assets/img/barked.svg" alt="barked" />
-                                barked
-                            </div>
-                            <div className="acoes">
-                                <ion-icon name="ellipsis-horizontal"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div className="conteudo">
-                            <img src="assets/img/dog.svg" alt="dog" />
-                        </div>
-
-                        <div className="fundo">
-                            <div className="acoes">
-                                <div>
-                                    <ion-icon name="heart-outline"></ion-icon>
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                    <ion-icon name="paper-plane-outline"></ion-icon>
-                                </div>
-                                <div>
-                                    <ion-icon name="bookmark-outline"></ion-icon>
-                                </div>
-                            </div>
-
-                            <div className="curtidas">
-                                <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
-                                <div className="texto">
-                                    Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    )
+                )
+            })}
+        </div>
+    );
 }
