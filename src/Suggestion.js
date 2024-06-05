@@ -11,9 +11,9 @@ export default function Suggestion() {
 
     return (
         <>
-            {suggestionsPack.map(suggestion => {
+            {suggestionsPack.map((suggestion, index) => {
                 return (
-                    <div className="sugestao">
+                    <div key={index} className="sugestao">
                         <div className="usuario">
                             <img src={suggestion.src} alt={suggestion.altName} />
                             <div className="texto">

@@ -31,9 +31,9 @@ export default function Post() {
     return (
         <div className="posts">
 
-            {postPack.map(post => {
+            {postPack.map((post, index) => {
                 return (
-                    <div className="post">
+                    <div key={index} className="post">
                         <div className="topo">
                             <div className="usuario">
                                 <img src={post.srcAvatarPost} alt={post.nameAlt} />
