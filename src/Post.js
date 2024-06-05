@@ -25,8 +25,7 @@ export default function Post() {
     const [savePost, setSavePost] = React.useState("bookmark-outline");
 
     function savePostButton() {
-        // Ver com mais detalhes como funciona essa função abaixo:
-        setSavePost((prevState) => (prevState === "bookmark-outline" ? "bookmark" : "bookmark-outline"));
+        (savePost === "bookmark-outline" ? setSavePost("bookmark") : setSavePost("bookmark-outline"))
     }
 
     return (
