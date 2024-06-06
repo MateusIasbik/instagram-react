@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-export default function Post({ post, index }) {
+export default function Post({ post }) {
     const [savePost, setSavePost] = useState("bookmark-outline");
     const [like, setLike] = useState("heart-outline");
     const [heartColor, setHeartColor] = useState("#000");
+    const [numberLike, setNumberLike] = useState(post.numberLikes);
+    const [isLiked, setIsLiked] = useState(false);
 
     function savePostButton() {
         (savePost === "bookmark-outline" ? setSavePost("bookmark") : setSavePost("bookmark-outline"));
@@ -13,20 +15,27 @@ export default function Post({ post, index }) {
         if (like === "heart-outline") {
             setLike("heart");
             setHeartColor("#ff0000");
+            setNumberLike(number => number + 0.001);
         } else {
             setLike("heart-outline");
             setHeartColor("#000000");
+            setNumberLike(number => number - 0.001);
+            setIsLiked(false);
         }
     }
 
     function imageClick() {
-        setLike("heart");
-        setHeartColor("#ff0000");
+        if (!isLiked) {
+            setLike("heart");
+            setHeartColor("#ff0000");
+            setNumberLike(number => number + 0.001);
+            setIsLiked(true);
+        }
     }
 
     return (
         <div className="posts">
-            <div key={index} className="post">
+            <div className="post">
                 <div className="topo">
                     <div className="usuario">
                         <img src={post.srcAvatarPost} alt={post.nameAlt} />
@@ -56,7 +65,7 @@ export default function Post({ post, index }) {
                     <div className="curtidas">
                         <img src={post.srcLike} alt={post.altLike} />
                         <div className="texto">
-                            Curtido por <strong>{post.altLike}</strong> e <strong>outras {post.numberLikes.toFixed(3)} pessoas</strong>
+                            Curtido por <strong>{post.altLike}</strong> e <strong>outras {numberLike.toFixed(3)} pessoas</strong>
                         </div>
                     </div>
                 </div>

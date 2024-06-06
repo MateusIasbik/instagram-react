@@ -2,7 +2,7 @@
 export default function Suggestion({suggestion, index}) {
 
     return (
-                    <div key={index} className="sugestao">
+                    <div className="sugestao">
                         <div className="usuario">
                             <img src={suggestion.src} alt={suggestion.altName} />
                             <div className="texto">
