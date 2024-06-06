@@ -176,6 +176,10 @@ body {
   cursor: pointer;
 }
 
+.post .conteudo {
+  position: relative;
+}
+
 .post .conteudo img {
   width: 100%;
 }
@@ -303,4 +307,28 @@ ion-icon {
   margin-left: 5px;
   padding-top: 5px;
   color: black;
+}
+
+
+
+@keyframes growAndDisappear {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  } 50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+.conteudo ion-icon {
+  display: flex;
+  color: #ff3040;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: growAndDisappear 1s forwards;
 }

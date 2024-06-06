@@ -6,6 +6,7 @@ export default function Post({ post }) {
     const [heartColor, setHeartColor] = useState("#000");
     const [numberLike, setNumberLike] = useState(post.numberLikes);
     const [isLiked, setIsLiked] = useState(false);
+    const [iconHeartScreen, setIconHeartScreen] = useState("none")
 
     function savePostButton() {
         (savePost === "bookmark-outline" ? setSavePost("bookmark") : setSavePost("bookmark-outline"));
@@ -20,16 +21,17 @@ export default function Post({ post }) {
             setLike("heart-outline");
             setHeartColor("#000000");
             setNumberLike(number => number - 0.001);
+            setIconHeartScreen("none");
             setIsLiked(false);
         }
     }
 
     function imageClick() {
-        console.log("imagem clicada")
         if (!isLiked) {
             setLike("heart");
             setHeartColor("#ff0000");
             setNumberLike(number => number + 0.001);
+            setIconHeartScreen("flex");
             setIsLiked(true);
         }
     }
@@ -48,6 +50,7 @@ export default function Post({ post }) {
                 </div>
 
                 <div className="conteudo">
+                    <ion-icon name="heart" style={{display: iconHeartScreen}}></ion-icon>
                     <img src={post.srcPost} alt={post.altPost} onDoubleClick={imageClick} />
                 </div>
 
