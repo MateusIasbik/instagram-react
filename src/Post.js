@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 
-export default function Post({index, post}) {
+export default function Post({ index, post }) {
     const [savePost, setSavePost] = useState("bookmark-outline");
+    const [like, setLike] = useState("heart-outline");
+    const [heartColor, setHeartColor] = useState("#000");
 
     function savePostButton() {
         (savePost === "bookmark-outline" ? setSavePost("bookmark") : setSavePost("bookmark-outline"));
+    }
+
+    function likeHeart() {
+        if (like === "heart-outline") {
+            setLike("heart");
+            setHeartColor("#ff0000");
+        } else {
+            setLike("heart-outline");
+            setHeartColor("#000000");
+        }
     }
 
     return (
@@ -27,7 +39,7 @@ export default function Post({index, post}) {
                 <div className="fundo">
                     <div className="acoes">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon name={like} onClick={likeHeart} style={{ color: heartColor }}></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
