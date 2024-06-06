@@ -14,7 +14,7 @@ export default function Post({ post }) {
     function likeHeart() {
         if (like === "heart-outline") {
             setLike("heart");
-            setHeartColor("#ff0000");
+            setHeartColor("#FF3040");
             setNumberLike(number => number + 0.001);
         } else {
             setLike("heart-outline");
