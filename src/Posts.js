@@ -26,7 +26,7 @@ export default function Posts() {
         <>
             {
                 postPack.map((post, index) => {
-                    return <Post post={post} index={index} />
+                    return <Post post={post} key={index} />
             })}
         </>
     )

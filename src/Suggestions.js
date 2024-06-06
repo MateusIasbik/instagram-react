@@ -18,7 +18,7 @@ export default function Suggestions() {
             </div>
 
             {suggestionsPack.map((suggestion, index) => {
-                return <Suggestion suggestion={suggestion} index={index}/>
+                return <Suggestion suggestion={suggestion} key={index}/>
             })}
         </div>
     )

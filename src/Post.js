@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Post({ index, post }) {
+export default function Post({ post, index }) {
     const [savePost, setSavePost] = useState("bookmark-outline");
     const [like, setLike] = useState("heart-outline");
     const [heartColor, setHeartColor] = useState("#000");
