@@ -1,18 +1,7 @@
 
-export default function Suggestion() {
-
-    const suggestionsPack = [
-        { src: "assets/img/bad.vibes.memes.svg", altName: "bad.vibes.memes", razao: "Segue você" },
-        { src: "assets/img/chibirdart.svg", altName: "chibirdart", razao: "Segue você" },
-        { src: "assets/img/razoesparaacreditar.svg", altName: "razoesparaacreditar", razao: "Novo no Instagram" },
-        { src: "assets/img/adorable_animals.svg", altName: "adorable_animals", razao: "Segue você" },
-        { src: "assets/img/smallcutecats.svg", altName: "smallcutecats", razao: "Segue você" }
-    ];
+export default function Suggestion({suggestion, index}) {
 
     return (
-        <>
-            {suggestionsPack.map((suggestion, index) => {
-                return (
                     <div key={index} className="sugestao">
                         <div className="usuario">
                             <img src={suggestion.src} alt={suggestion.altName} />
@@ -25,7 +14,4 @@ export default function Suggestion() {
                         <div className="seguir">Seguir</div>
                     </div>
                 )
-            })}
-        </>
-    )
 }
