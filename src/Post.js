@@ -25,6 +25,7 @@ export default function Post({ post }) {
     }
 
     function imageClick() {
+        console.log("imagem clicada")
         if (!isLiked) {
             setLike("heart");
             setHeartColor("#ff0000");
@@ -47,7 +48,7 @@ export default function Post({ post }) {
                 </div>
 
                 <div className="conteudo">
-                    <img src={post.srcPost} alt={post.altPost} onClick={imageClick}/>
+                    <img src={post.srcPost} alt={post.altPost} onDoubleClick={imageClick} />
                 </div>
 
                 <div className="fundo">
