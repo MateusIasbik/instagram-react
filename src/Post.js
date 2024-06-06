@@ -19,6 +19,11 @@ export default function Post({ index, post }) {
         }
     }
 
+    function imageClick() {
+        setLike("heart");
+        setHeartColor("#ff0000");
+    }
+
     return (
         <div className="posts">
             <div key={index} className="post">
@@ -33,7 +38,7 @@ export default function Post({ index, post }) {
                 </div>
 
                 <div className="conteudo">
-                    <img src={post.srcPost} alt={post.altPost} />
+                    <img src={post.srcPost} alt={post.altPost} onClick={imageClick}/>
                 </div>
 
                 <div className="fundo">
