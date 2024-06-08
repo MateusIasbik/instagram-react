@@ -17,23 +17,24 @@ export default function Post({ post }) {
             setLike("heart");
             setHeartColor("#FF3040");
             setNumberLike(number => number + 0.001);
+            setIsLiked(true);
         } else {
             setLike("heart-outline");
             setHeartColor("#000000");
             setNumberLike(number => number - 0.001);
-            setIconHeartScreen("none");
             setIsLiked(false);
-        }
+            }
+        setIconHeartScreen("none");
     }
 
     function imageClick() {
         if (!isLiked) {
-            setLike("heart");
-            setHeartColor("#ff0000");
-            setNumberLike(number => number + 0.001);
             setIconHeartScreen("flex");
+            setLike("heart");
+            setHeartColor("#FF3040");
+            setNumberLike(number => number + 0.001);
             setIsLiked(true);
-        }
+        } 
     }
 
     return (
