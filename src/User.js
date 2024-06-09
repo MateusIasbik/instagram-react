@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function User() {
 
-    const [nameUser, setNameUser] = React.useState("catanacomics");
-    const [imgUser, setImgUser] = React.useState("./assets/img/catanacomics.svg")
+    const [nameUser, setNameUser] = useState("catanacomics");
+    const [imgUser, setImgUser] = useState("./assets/img/catanacomics.svg")
 
     function pencilButton() {
         const newNameUser = prompt("Digite seu nome de usuário!");

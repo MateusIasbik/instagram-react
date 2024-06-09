@@ -23,18 +23,23 @@ export default function Post({ post }) {
             setHeartColor("#000000");
             setNumberLike(number => number - 0.001);
             setIsLiked(false);
-            }
+        }
         setIconHeartScreen("none");
     }
 
     function imageClick() {
+        setIconHeartScreen("flex");
+
         if (!isLiked) {
-            setIconHeartScreen("flex");
             setLike("heart");
             setHeartColor("#FF3040");
             setNumberLike(number => number + 0.001);
             setIsLiked(true);
         } 
+        
+        setTimeout(() => {
+            setIconHeartScreen("none");
+        }, 1000);
     }
 
     return (
@@ -51,7 +56,7 @@ export default function Post({ post }) {
                 </div>
 
                 <div className="conteudo">
-                    <ion-icon name="heart" style={{display: iconHeartScreen}}></ion-icon>
+                    <ion-icon name="heart" style={{ display: iconHeartScreen }}></ion-icon>
                     <img src={post.srcPost} alt={post.altPost} onDoubleClick={imageClick} />
                 </div>
 

@@ -6,7 +6,6 @@ export default function Sidebar() {
         <div className="sidebar">
 
             <User />
-
             <Suggestions />
 
             <div className="links">

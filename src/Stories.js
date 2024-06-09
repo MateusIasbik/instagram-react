@@ -16,7 +16,7 @@ export default function Stories() {
     return (
         <div className="stories">
             {storiesPack.map((story, index) => {
-                return <Story story={story} key={index}/>
+                return <Story story={story} key={index} />
             })}
 
             <div className="setinha">
